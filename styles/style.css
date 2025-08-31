@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--normal-font, "Inter"), sans-serif;
-  font-variation-settings: "wdth" var(--normal-font-wieght-text, 410);
+  font-variation-settings: "wght" var(--normal-font-wieght-text, 410);
   background-image: repeating-linear-gradient(
       to right,
       #d3d3d3 0,
@@ -73,7 +73,7 @@
 }
 
 .card__header {
-  font-weight: var(--main-font-wieght-header);
+  font-variation-settings: "wght" var(--main-font-wieght-header, 715);
   line-height: 110%;
   padding: 5px 10px;
   font-size: inherit;
@@ -142,7 +142,6 @@
 }
 
 .card__description {
-  font-weight: var(--main-font-wieght-text);
   padding: 25px;
   line-height: 21px;
   display: grid;
