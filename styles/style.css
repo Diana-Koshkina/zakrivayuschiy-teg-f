@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--normal-font, "Inter"), sans-serif;
+  font-family: var(---main-font, "Inter"), sans-serif;
   font-variation-settings: "wght" var(--normal-font-wieght-text, 410);
   background-image: repeating-linear-gradient(
       to right,
@@ -42,7 +42,7 @@
   margin-block-end: 98px;
   inline-size: var(--block-width);
   background-color: var(--background-color);
-  font-family: var(--acent-font);
+  font-family: var(--acent-font), sans-serif;
   text-align: center;
   padding-block-start: clamp(120px, calc(116.479px + 0.939vw), 130px);
   padding-block-end: clamp(120px, calc(116.479px + 0.939vw), 130px);
@@ -61,21 +61,20 @@
 
 .card-list {
   display: grid;
-  gap: 50px;
+  gap: 51px;
 }
 
 .card {
   background-color: var(--background-color);
   inline-size: var(--block-width);
   border: var(--border);
-  font-family: var(--main-font);
+  font-family: var(---main-font, "Inter"), sans-serif;
   font-size: var(--card-font-size);
 }
 
 .card__header {
   font-variation-settings: "wght" var(--main-font-wieght-header, 715);
-  line-height: 110%;
-  padding: 5px 10px;
+  padding: 4px 10px;
   font-size: inherit;
 }
 
@@ -89,6 +88,8 @@
   object-fit: cover;
   display: block;
   object-position: center;
+  border-top: var(--border);
+  border-bottom: var(--border);
 }
 
 .image-sprint-start {
@@ -127,7 +128,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--acent-font);
+  font-family: var(--acent-font), sans-serif;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   font-size: var(--button-font-size);
@@ -142,10 +143,10 @@
 }
 
 .card__description {
-  padding: 25px;
+  padding: 26px 25px 27px;
   line-height: 21px;
   display: grid;
-  gap: 23px;
+  gap: 25px;
 }
 
 .card__button-wrapper {
@@ -159,6 +160,7 @@
   border: 2px solid transparent;
   transition: 0.3s ease;
   cursor: pointer;
+  height: 38px;
 }
 
 .card__icon-button:focus {
@@ -168,6 +170,7 @@
 .card__icon-button:focus-visible {
   outline: none;
   border-color: #000000;
+  height: 38px;
 }
 
 .sparks {
@@ -235,7 +238,7 @@
 
 .accent-button {
   border: var(--border);
-  font-family: var(--acent-font);
+  font-family: var(--acent-font), sans-serif;
   font-size: var(--button-font-size);
   padding: 10px;
   background-color: var(--background-color);
@@ -277,15 +280,8 @@
   background: transparent;
 }
 
-.save-button-wrapper {
-  padding-block-start: 50px;
-  padding-block-end: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .save-button {
+  margin: 48px auto 100px;
   inline-size: 332px;
   display: flex;
   gap: 8px;
@@ -328,7 +324,7 @@
 }
 
 .dialog__floppy[open] .dialog__header {
-  font-family: var(--acent-font);
+  font-family: var(--acent-font), sans-serif;
   font-size: var(--button-font-size);
   line-height: 150%;
   text-transform: uppercase;
@@ -340,17 +336,19 @@
 }
 
 .dialog__floppy[open]::backdrop {
-  backdrop-filter: grayscale(100%);
+  background-color: #000000;
+  opacity: 0.75;
 }
 
 @media (width <= 375px) {
   .header {
-    margin-block-start: 102px;
-    margin-block-end: 102px;
+    margin-block-start: 101px;
+    margin-block-end: 101px;
   }
 
   .save-button-wrapper {
     padding-block-start: 45px;
+    align-items: flex-start;
   }
 
   .save-button {
